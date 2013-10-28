@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE application PUBLIC
+	"-//Sun Microsystems, Inc.//DTD J2EE Application 1.3//EN"
+	"http://java.sun.com/dtd/application_1_3.dtd">
+<application>
+  <display-name>Myproject EAR module</display-name>
+  <description>Myproject EAR module</description>
+  <module>
+    <ejb>project-ejb-1.0.jar</ejb>
+  </module>
+  <module>
+    <web>
+      <web-uri>project-web-1.0.war</web-uri>
+      <context-root>/project-web</context-root>
+    </web>
+  </module>
+</application>

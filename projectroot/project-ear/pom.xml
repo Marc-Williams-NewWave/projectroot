@@ -1,0 +1,70 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.test.maven</groupId>
+		<artifactId>projectroot</artifactId>
+		<version>1.0</version>
+	</parent>
+	<groupId>project-ear</groupId>
+	<artifactId>project-ear</artifactId>
+	<packaging>ear</packaging>
+	<name>project-ear</name>
+	<description>project-ear</description>
+
+	<!-- <properties> <jboss-as.home>C:\Prabakar\jboss-as-7.1.0.Final</jboss-as.home> 
+		</properties> -->
+
+	<dependencies>
+
+		<dependency>
+			<groupId>project-ejb</groupId>
+			<artifactId>project-ejb</artifactId>
+			<type>ejb</type>
+		</dependency>
+
+		<dependency>
+			<groupId>project-web</groupId>
+			<artifactId>project-web</artifactId>
+			<type>war</type>
+		</dependency>
+
+		<dependency>
+			<groupId>project-jar</groupId>
+			<artifactId>project-jar</artifactId>
+			<type>jar</type>
+		</dependency>
+	</dependencies>
+
+
+	<build>
+		<finalName>project-ear</finalName>
+		<defaultGoal>install</defaultGoal>
+		<plugins>
+			<plugin>
+				<artifactId>maven-ear-plugin</artifactId>
+				<configuration>
+					<displayName>Myproject EAR module</displayName>
+					<description>Myproject EAR module</description>
+					<defaultLibBundleDir>lib</defaultLibBundleDir>
+					<modules>
+						<ejbModule>
+							<groupId>project-ejb</groupId>
+							<artifactId>project-ejb</artifactId>
+						</ejbModule>
+						<webModule>
+							<groupId>project-web</groupId>
+							<artifactId>project-web</artifactId>
+							<contextRoot>/project-web</contextRoot>
+						</webModule>
+						<jarModule>
+							<groupId>project-jar</groupId>
+							<artifactId>project-jar</artifactId>
+						</jarModule>
+					</modules>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
